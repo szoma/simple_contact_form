@@ -1,0 +1,28 @@
+{% block stylesheets %}
+    {{ encore_entry_link_tags('app') }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}
+
+{% for message in app.flashes('success') %}
+    <h5>
+    {{ message }}
+    </h5>
+{% endfor %}
+
+{%block body %}
+    <div class="wrapper">
+        <div class="inner">
+            <h3>Leave us a message!</h3>
+            <label class="form-group">
+                <div class="form-control">
+                    {{ form_start(form) }}
+                </div>
+            </label> 
+            
+            {{form_end(form)}}
+        </div>
+    </div>
+{% endblock %}
